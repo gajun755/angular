@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr >
+            
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor='let s of readUser'>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{s.fullname}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.mobile}}</td>
+            <td><button type="button" class="btn btn-success" [routerLink]="['/create',s.email]">Update</button></td>
+            <td><button type="button" class="btn btn-danger" (click)=deleteuser(s.email)>Delete</button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+</div>

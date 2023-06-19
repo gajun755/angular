@@ -1,0 +1,49 @@
+<div class="container mt-3">
+
+
+    <div class="row">
+        <!-- show error msg -->
+        <div *ngIf="errMsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{errMsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <!-- close error msg -->
+        <!-- show data  save successful -->
+        <div *ngIf="datasuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{datasuccess}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <!-- close data  save successful -->
+        <form [formGroup]="userForm">
+            <div class="col-md-4 mt-2">
+                <input type="text" class="form-control" formControlName="fullname" placeholder="Enter Full Name" />
+            </div>
+            <div class="col-md-4 mt-2">
+                <input type="text" class="form-control" *ngIf="paramid" readonly="true" formControlName="email"
+                    placeholder="Enter Email" />
+                <input type="text" class="form-control" *ngIf="!paramid" formControlName="email"
+                    placeholder="Enter Email" />
+            </div>
+            <div class="col-md-4 mt-2">
+                <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile" />
+            </div>
+
+            <div class="col-md-4 mt-2">
+                <input type="file" (change)="onFileChanged($event)" formControlName="usrimg" class="form-control"
+                    placeholder="Mobile" />
+                <span>Upload only images not other</span>
+            </div>
+            <div *ngIf="paramid" class="col-md-4 mt-2" (click)="updateUser()">
+                <button class="btn btn-primary">Update User</button>
+            </div>
+            <div *ngIf="!paramid" class="col-md-4 mt-2" (click)="userSubmit()">
+                <button class="btn btn-primary">Create User</button>
+            </div>
+            <br>
+            <!-- <p style="color: red;">{{errMsg}}</p> -->
+        </form>
+    </div>
+
+
+
+</div>

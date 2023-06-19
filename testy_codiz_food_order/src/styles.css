@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+
+    margin: 0;
+    font-family: Quicksand, sans-serif;
+}
+
+a{
+
+    text-decoration: none;
+    
+}
