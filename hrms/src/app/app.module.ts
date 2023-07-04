@@ -8,11 +8,13 @@ import { ReadComponent } from './read/read.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
-    ReadComponent
+    ReadComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,
